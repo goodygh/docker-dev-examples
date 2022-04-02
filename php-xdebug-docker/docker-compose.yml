@@ -1,0 +1,12 @@
+# docker-compose.yml
+services:
+  example:
+    container_name: php
+    build: ./php
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
